@@ -186,6 +186,23 @@ body {
   display: flex;
   gap: 15px;
   min-height: 160px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.product-card:hover {
+  border-color: #000;
+}
+
+.product-card.selected {
+  border: 3px solid #ff003b;
+  background-color: #fff4f6;
+  padding: 13px;
+}
+
+.product-card:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
 }
 
 .product-card img {
@@ -213,6 +230,31 @@ body {
   color: #666;
 }
 
+.description-toggle {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 6px 8px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.description-toggle:hover,
+.description-toggle:focus {
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+
+.product-description {
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
 /* selected products */
 .selected-products {
   margin: 40px 0;
@@ -230,6 +272,75 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.selected-placeholder {
+  color: #666;
+  font-size: 14px;
+}
+
+.selected-product-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.remove-product {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.remove-product:hover {
+  background: #666;
+}
+
+.clear-btn {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.clear-btn:hover,
+.clear-btn:focus {
+  background: #000;
+  color: #fff;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+.chat-message.user {
+  margin-left: 40px;
+  background: #eee;
+}
+
+.chat-message.assistant {
+  margin-right: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
 }
 
 .generate-btn {
